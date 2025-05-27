@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Our Brands - Woodford Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        :root {
+            --primary: #007f4c;
+            --primary-dark: #005a36;
+            --secondary: #1c1c1c;
+            --light-gray: #f9f9f9;
+            --medium-gray: #eaeaea;
+            --dark-gray: #555;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 127, 76, 0.2);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Header */
+        .main-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .main-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .main-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+            color: var(--dark-gray);
+        }
+
+        /* Brands Section */
+        .brands-section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-gray);
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .brand-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .brand-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .brand-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .brand-card:hover .brand-image img {
+            transform: scale(1.05);
+        }
+
+        .brand-content {
+            padding: 30px;
+            position: relative;
+        }
+
+        .brand-icon {
+            position: absolute;
+            top: -25px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 127, 76, 0.3);
+        }
+
+        .brand-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-right: 40px;
+        }
+
+        .brand-content p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .brand-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .brand-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .brand-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .brand-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .cta-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-col p {
+            opacity: 0.8;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .main-header h1 {
+                font-size: 2.4rem;
+            }
+            
+            .main-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                padding: 100px 0 60px;
+            }
+            
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .brand-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .brand-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-header {
+                padding: 80px 0 50px;
+            }
+            
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .main-header p {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .brand-content {
+                padding: 20px;
+            }
+            
+            .brand-icon {
+                top: -20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .brand-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <h1>Our Brands</h1>
+            <p>Discover the diverse portfolio of Woodford Group - each brand delivering excellence in its sector while sharing our core values of quality, innovation, and customer focus.</p>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+             
+            <span>/</span>
+            <span>Our Brands</span>
+        </div>
+    </nav>
+
+    <!-- Brands Section -->
+    <section class="brands-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Portfolio of Brands</h2>
+                <p>Each Woodford Group brand operates independently while maintaining our commitment to exceptional service and sustainable business practices.</p>
+            </div>
+
+            <div class="brand-grid">
+                <!-- Brand 1 -->
+                <div class="brand-card">
+                    <div class="brand-image">
+                        <img src="car1.PNG" alt="Woodford Car Hire Fleet">
+                    </div>
+                    <div class="brand-content">
+                        <div class="brand-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Woodford Car Hire</h3>
+                        <p>Premium vehicle rental services with an extensive fleet ranging from compact cars to luxury vehicles. Our 24/7 customer support and flexible rental options ensure a seamless experience for both business and leisure travelers.</p>
+                        <a href="https://www.woodford.co.za/" class="brand-link">Explore Services <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Brand 2 -->
+                <div class="brand-card">
+                    <div class="brand-image">
+                        <img src="car.jpg" alt="Woodford Bid Auction">
+                    </div>
+                    <div class="brand-content">
+                        <div class="brand-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Woodford Bid</h3>
+                        <p>South Africa's trusted online auction platform connecting buyers with exclusive deals. Our transparent bidding process and verified listings provide a secure marketplace for vehicles, equipment, and more.</p>
+                        <a href="https://www.woodfordcartrade.co.za/" class="brand-link">View Auctions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Brand 3 -->
+                <div class="brand-card">
+                    <div class="brand-image">
+                        <img src="logistic.PNG" alt="Woodford Logistics Services">
+                    </div>
+                    <div class="brand-content">
+                        <div class="brand-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Woodford Vehicles Rentals</h3>
+                        <p>Comprehensive logistics solutions including fleet management, freight transportation, and supply chain optimization. Our technology-driven approach ensures reliable, cost-effective service for businesses of all sizes.</p>
+                        <a href="https://logistics.woodford.co.za/" class="brand-link">Discover Solutions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Partner With Woodford Group</h2>
+                <p>Whether you need transportation, auction services, or logistics solutions, our brands work together to provide integrated services tailored to your needs.</p>
+                <a href="https://www.woodford.co.za/contact" class="btn cta-btn">Contact Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.PNG" alt="Woodford Group Logo" style="margin-bottom: 20px;">
+                    <p>Woodford Group is a diversified South African company with operations in vehicle rentals, auctions, and logistics services.</p>
+                    <div class="social-links">
+
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Brands</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.woodford.co.za/">Woodford Car Hire</a></li>
+                        <li><a href="https://www.woodfordcartrade.co.za/">Woodford Bid</a></li>
+                        <li><a href="https://logistics.woodford.co.za/">Woodford Vehicles Rentals</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                     
+                </div>
+                 
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Woodford Group. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate brand cards on scroll
+            const brandCards = document.querySelectorAll('.brand-card');
+            
+            const animateOnScroll = () => {
+                brandCards.forEach((card, index) => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if(cardPosition < screenPosition) {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    }
+                });
+            };
+            
+            // Set initial state
+            brandCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1)';
+            });
+            
+            // Run on load and scroll
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
