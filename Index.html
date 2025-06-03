@@ -7,11 +7,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+
+    .logo {
+  height: 50px; 
+  width: auto;
+}
+
+.main-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white; 
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: #0b3d2e; /* Hover color */
+}
+
+
+
     :root {
       --bg-color: #f8faf9;
       --primary-dark: #0b3d2e;
       --primary-light: #166534;
-      --accent-color: #22c55e;
+      --accent-color: #004325;;
       --text-dark: #0f172a;
       --text-light: #4b5563;
       --text-lighter: #64748b;
@@ -120,11 +139,11 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, rgba(0, 67, 37, 0.9)), url('https://images.pexels.com/photos/409701/pexels-photo-409701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      background: linear-gradient(135deg, rgba(0, 67, 37, 0.9)), url('https://images.pexels.com/photos/16958908/pexels-photo-16958908/free-photo-of-clear-sky-over-lake-with-forest-around.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
       background-size: cover;
       background-position: center;
       color: white;
-      padding: 100px 5%;
+      padding: 10px 5%;
       text-align: center;
     }
 
@@ -146,7 +165,7 @@
       text-align: center;
       margin: 80px 20px 50px;
       font-size: 2.75rem;
-      color: var(--primary-dark);
+      color: #004325;;
       font-weight: 700;
       position: relative;
     }
@@ -337,12 +356,11 @@
     footer {
       background: #004325;
       color: white;
-      padding: 60px 5% 30px;
+      
     }
 
     .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ 
       gap: 40px;
       max-width: 1300px;
       margin: 0 auto;
@@ -356,7 +374,7 @@
     }
 
     .footer-about p {
- 
+      
       margin-bottom: 20px;
       color: white;
     }
@@ -454,8 +472,7 @@
 
     .copyright {
       text-align: center;
-      padding-top: 40px;
-      margin-top: 40px;
+       
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: white;
       font-size: 0.9rem;
@@ -614,23 +631,22 @@
 
   <!-- Header -->
   <header>
-    <nav class="navbar">
-      <a href="#" class="logo">
-        <i class="fas fa-car"></i> The Woodford Group
-      </a>
-      <div class="nav-links">
-        <a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Ec3-42g-SApGkFZpVcv3RHYBFO3SOjTDgMhICK9E8k0S4Q?e=aY7KPJ">Home</a>
-        <a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Eb5O9Bt1uZNNjrdoNxxjpFkBHCijJob0WOq_--Hg36KaqQ?e=cUTBpY" class="active">About</a>
-      </div>
-       
-    </nav>
+
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <h1>Our Premium Mobility Brands</h1>
-    <p>Discover the diverse range of transportation solutions under the Woodford Mobility Group, serving millions of customers worldwide with exceptional service and innovative solutions.</p>
-  </section>
+<section class="hero">
+  <div class="header-nav">
+    <img src="logo.png" alt="Woodford Mobility Group Logo" class="logo">
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+  
+  <h1>Our Premium Mobility Brands</h1>
+  <p>Discover the diverse range of transportation solutions under the Woodford Mobility Group, serving millions of customers worldwide with exceptional service and innovative solutions.</p>
+</section>
 
   <!-- Main Content -->
   <h2>Our Brands</h2>
@@ -672,22 +688,6 @@
 
     <div class="brand">
       <div class="brand-image-container">
-        <img src="logistic.jpg" alt="Woodford Vehicle Rentals">
-      </div>
-      <div class="brand-content">
-        <h3>Woodford Vehicle Rentals</h3>
-        <p>From sedans to commercial trucks, our rental solutions are flexible and affordable, built to support logistics companies and fleet managers nationwide with customized rental packages.</p>
-        <div class="brand-features">
-          <span class="feature-tag">Commercial Fleet</span>
-          <span class="feature-tag">Long-term Options</span>
-          <span class="feature-tag">Maintenance Included</span>
-        </div>
-        <a class="learn-more" href="https://logistics.woodford.co.za/">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-
-    <div class="brand">
-      <div class="brand-image-container">
         <img src="https://www.enterprise.com/content/dam/ecom/logo-enterprise.png" alt="Enterprise">
       </div>
       <div class="brand-content">
@@ -702,7 +702,7 @@
       </div>
     </div>
 
-    <div class="brand">
+        <div class="brand">
       <div class="brand-image-container">
         <img src="https://d2bqt2gyedtfmm.cloudfront.net/find/assets/logos/Alamo.webp" alt="Alamo">
       </div>
@@ -734,30 +734,31 @@
       </div>
     </div>
 
+
+
+
+    <div class="brand">
+      <div class="brand-image-container">
+        <img src="woodford_logistics_pty_ltd_logo.jpg" alt="Woodford Vehicle Rentals">
+      </div>
+      <div class="brand-content">
+        <h3>Woodford Vehicle Rentals</h3>
+        <p>From sedans to commercial trucks, our rental solutions are flexible and affordable, built to support logistics companies and fleet managers nationwide with customized rental packages.</p>
+        <div class="brand-features">
+          <span class="feature-tag">Commercial Fleet</span>
+          <span class="feature-tag">Long-term Options</span>
+          <span class="feature-tag">Maintenance Included</span>
+        </div>
+        <a class="learn-more" href="https://logistics.woodford.co.za/">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+ 
+
   </section>
   <!-- Footer -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-about">
-        <div class="footer-logo">
-          <i class="fas fa-car"></i> The Woodford Group
-        </div>
-        <p>The Woodford Group is a global leader in transportation solutions, offering a comprehensive range of services to meet all your mobility needs.</p>
- 
-      </div>
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Ec3-42g-SApGkFZpVcv3RHYBFO3SOjTDgMhICK9E8k0S4Q?e=aY7KPJ">Home</a></li>
-          <li><a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Eb5O9Bt1uZNNjrdoNxxjpFkBHCijJob0WOq_--Hg36KaqQ?e=cUTBpY">About</a></li>
- 
-        </ul>
-      </div>
-      <div class="footer-links">
-         
-      </div>
-      
-    </div>
+     
     <div class="copyright">
       &copy; 2025 The Woodford Group. All Rights Reserved.
     </div>
