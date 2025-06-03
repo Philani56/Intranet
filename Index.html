@@ -1,626 +1,819 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Our Brands - Woodford Group</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Reset & Base Styles */
-        :root {
-            --primary: #007f4c;
-            --primary-dark: #005a36;
-            --secondary: #1c1c1c;
-            --light-gray: #f9f9f9;
-            --medium-gray: #eaeaea;
-            --dark-gray: #555;
-            --white: #ffffff;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Brands | Woodford Mobility Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #f8faf9;
+      --primary-dark: #0b3d2e;
+      --primary-light: #166534;
+      --accent-color: #22c55e;
+      --text-dark: #0f172a;
+      --text-light: #4b5563;
+      --text-lighter: #64748b;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--light-gray);
-            color: var(--secondary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            line-height: 1.3;
-        }
+    body {
+ 
+      font-family: 'woodford-logistics', 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      max-width: 1600px;
+      margin: 0 auto;
+      background: #004325;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
+    .logo i {
+      margin-right: 10px;
+      color: var(--accent-color);
+      color: white;
+    }
 
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 127, 76, 0.2);
-        }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
 
-        .section-padding {
-            padding: 80px 0;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+      color: white;
+    }
 
-        /* Header */
-        .main-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            color: var(--white);
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
-        }
+    .nav-links a:hover {
+      color: var(--primary-light);
+    }
 
-        .main-header::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary);
-        }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
 
-        .main-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-        .main-header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
+    .cta-button {
+      padding: 10px 24px;
+      background-color: var(--primary-light);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-        /* Breadcrumb */
-        .breadcrumb {
-            padding: 15px 0;
-            background-color: var(--medium-gray);
-            font-size: 0.9rem;
-        }
+    .cta-button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(11, 61, 46, 0.2);
+    }
 
-        .breadcrumb a {
-            color: var(--primary);
-        }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(0, 67, 37, 0.9)), url('https://images.pexels.com/photos/409701/pexels-photo-409701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 5%;
+      text-align: center;
+    }
 
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
 
-        .breadcrumb span {
-            margin: 0 8px;
-            color: var(--dark-gray);
-        }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
 
-        /* Brands Section */
-        .brands-section {
-            padding: 80px 0;
-        }
+    /* Main Content */
+    h2 {
+      text-align: center;
+      margin: 80px 20px 50px;
+      font-size: 2.75rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+      position: relative;
+    }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-color);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
 
-        .section-header h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
+    .brand-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      padding: 0 5% 100px;
+      max-width: 1300px;
+      margin: auto;
+    }
 
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary);
-        }
+    .brand {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      position: relative;
+    }
 
-        .section-header p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--dark-gray);
-        }
+    .brand:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
 
-        .brand-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
+    .brand::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 0;
+      background-color: var(--accent-color);
+      transition: height 0.6s ease;
+    }
 
-        .brand-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-        }
+    .brand:hover::before {
+      height: 100%;
+    }
 
-        .brand-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
+    .brand:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
-        .brand-image {
-            height: 220px;
-            overflow: hidden;
-        }
+    .brand-image-container {
+      flex: 1;
+ 
+      padding: 30px;
+      background-color: #f8faf9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .brand-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
+    .brand img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      object-fit: contain;
+ 
+    }
 
-        .brand-card:hover .brand-image img {
-            transform: scale(1.05);
-        }
+    .brand:hover img {
+      transform: scale(1.05);
+    }
 
-        .brand-content {
-            padding: 30px;
-            position: relative;
-        }
+    .brand-content {
+      flex: 2;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-        .brand-icon {
-            position: absolute;
-            top: -25px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0, 127, 76, 0.3);
-        }
+    .brand-content h3 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
 
-        .brand-content h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            padding-right: 40px;
-        }
+    .brand-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
 
-        .brand-content p {
-            color: var(--dark-gray);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
+    .brand-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
 
-        .brand-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
+    .feature-tag {
+      background-color: #e2f3eb;
+      color: var(--primary-light);
+      padding: 6px 12px;
+       
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
 
-        .brand-link i {
-            margin-left: 8px;
-            transition: var(--transition);
-        }
+    .learn-more {
+      align-self: flex-start;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background-color: var(--primary-light);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .brand-link:hover {
-            color: var(--primary-dark);
-        }
+    .learn-more i {
+      transition: transform 0.3s ease;
+    }
 
-        .brand-link:hover i {
-            transform: translateX(5px);
-        }
+    .learn-more:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+     
+    }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-        }
+    .learn-more:hover i {
+      transform: translateX(3px);
+    }
 
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* Stats Section */
+    .stats-section {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 80px 5%;
+      text-align: center;
+    }
 
-        .cta-content h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .cta-content p {
-            margin-bottom: 30px;
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
+    .stat-item {
+      flex: 1;
+      min-width: 200px;
+    }
 
-        .cta-btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--accent-color);
+    }
 
-        .cta-btn:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: var(--primary-dark);
-        }
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
 
-        /* Footer */
-        .main-footer {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 60px 0 0;
-        }
+    /* Footer */
+    footer {
+      background: #004325;
+      color: white;
+      padding: 60px 5% 30px;
+    }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
 
-        .footer-col h3 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
 
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary);
-        }
+    .footer-about p {
+ 
+      margin-bottom: 20px;
+      color: white;
+    }
 
-        .footer-col p {
-            opacity: 0.8;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
 
-        .footer-links {
-            list-style: none;
-        }
+    .social-links a {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
 
-        .footer-links li {
-            margin-bottom: 10px;
-        }
+    .social-links a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
 
-        .footer-links a {
-            opacity: 0.8;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
+    .footer-links h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
 
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--primary);
-            padding-left: 5px;
-        }
+    .footer-links h3::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-color);
+      bottom: 0;
+      left: 0;
+    }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      color: white;
+    }
 
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
+    .footer-links li {
+      margin-bottom: 12px;
+      color: white;
+    }
 
-        .social-links a:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-        }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        .footer-bottom {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
+    .footer-links a:hover {
+      color: white;
+    }
 
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .main-header h1 {
-                font-size: 2.4rem;
-            }
-            
-            .main-header p {
-                font-size: 1.1rem;
-            }
-            
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-        }
+    .footer-newsletter input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
 
-        @media (max-width: 768px) {
-            .main-header {
-                padding: 100px 0 60px;
-            }
-            
-            .main-header h1 {
-                font-size: 2rem;
-            }
-            
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            .brand-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .brand-image {
-                height: 200px;
-            }
-        }
+    .footer-newsletter input::placeholder {
+      color: #94a3b8;
+    }
 
-        @media (max-width: 576px) {
-            .main-header {
-                padding: 80px 0 50px;
-            }
-            
-            .main-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .main-header p {
-                font-size: 1rem;
-            }
-            
-            .section-header h2 {
-                font-size: 1.6rem;
-            }
-            
-            .brand-content {
-                padding: 20px;
-            }
-            
-            .brand-icon {
-                top: -20px;
-                right: 20px;
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            
-            .brand-content h3 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    .footer-newsletter button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .footer-newsletter button:hover {
+      background-color: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .brand {
+        flex-direction: column !important;
+      }
+
+      .brand-image-container {
+        width: 100%;
+        padding: 40px;
+      }
+
+      .brand img {
+        max-height: 180px;
+      }
+
+      .brand-content {
+        padding: 30px;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      .stat-item {
+        min-width: 150px;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 5%;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .stats-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stat-item {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-content h3 {
+        font-size: 1.6rem;
+      }
+
+      .brand-content p {
+        font-size: 1rem;
+      }
+
+      .learn-more {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+
+      .feature-tag {
+        font-size: 0.75rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .brand {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .brand:nth-child(1) { animation-delay: 0.1s; }
+    .brand:nth-child(2) { animation-delay: 0.2s; }
+    .brand:nth-child(3) { animation-delay: 0.3s; }
+    .brand:nth-child(4) { animation-delay: 0.4s; }
+    .brand:nth-child(5) { animation-delay: 0.5s; }
+    .brand:nth-child(6) { animation-delay: 0.6s; }
+  </style>
 </head>
 <body>
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container">
-            <h1>Our Brands</h1>
-            <p>Discover the diverse portfolio of Woodford Group - each brand delivering excellence in its sector while sharing our core values of quality, innovation, and customer focus.</p>
-        </div>
-    </header>
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-        <div class="container">
-             
-            <span>/</span>
-            <span>Our Brands</span>
-        </div>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-car"></i> The Woodford Group
+      </a>
+      <div class="nav-links">
+        <a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Ec3-42g-SApGkFZpVcv3RHYBFO3SOjTDgMhICK9E8k0S4Q?e=aY7KPJ">Home</a>
+        <a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Eb5O9Bt1uZNNjrdoNxxjpFkBHCijJob0WOq_--Hg36KaqQ?e=cUTBpY" class="active">About</a>
+      </div>
+       
     </nav>
+  </header>
 
-    <!-- Brands Section -->
-    <section class="brands-section section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Portfolio of Brands</h2>
-                <p>Each Woodford Group brand operates independently while maintaining our commitment to exceptional service and sustainable business practices.</p>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Our Premium Mobility Brands</h1>
+    <p>Discover the diverse range of transportation solutions under the Woodford Mobility Group, serving millions of customers worldwide with exceptional service and innovative solutions.</p>
+  </section>
 
-            <div class="brand-grid">
-                <!-- Brand 1 -->
-                <div class="brand-card">
-                    <div class="brand-image">
-                        <img src="car1.PNG" alt="Woodford Car Hire Fleet">
-                    </div>
-                    <div class="brand-content">
-                        <div class="brand-icon">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <h3>Woodford Car Hire</h3>
-                        <p>Premium vehicle rental services with an extensive fleet ranging from compact cars to luxury vehicles. Our 24/7 customer support and flexible rental options ensure a seamless experience for both business and leisure travelers.</p>
-                        <a href="https://www.woodford.co.za/" class="brand-link">Explore Services <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+  <!-- Main Content -->
+  <h2>Our Brands</h2>
 
-                <!-- Brand 2 -->
-                <div class="brand-card">
-                    <div class="brand-image">
-                        <img src="car.jpg" alt="Woodford Bid Auction">
-                    </div>
-                    <div class="brand-content">
-                        <div class="brand-icon">
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                        <h3>Woodford Bid</h3>
-                        <p>South Africa's trusted online auction platform connecting buyers with exclusive deals. Our transparent bidding process and verified listings provide a secure marketplace for vehicles, equipment, and more.</p>
-                        <a href="https://www.woodfordcartrade.co.za/" class="brand-link">View Auctions <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+  <section class="brand-section">
 
-                <!-- Brand 3 -->
-                <div class="brand-card">
-                    <div class="brand-image">
-                        <img src="logistic.PNG" alt="Woodford Logistics Services">
-                    </div>
-                    <div class="brand-content">
-                        <div class="brand-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h3>Woodford Vehicles Rentals</h3>
-                        <p>Comprehensive logistics solutions including fleet management, freight transportation, and supply chain optimization. Our technology-driven approach ensures reliable, cost-effective service for businesses of all sizes.</p>
-                        <a href="https://logistics.woodford.co.za/" class="brand-link">Discover Solutions <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+    <div class="brand">
+      <div class="brand-image-container">
+        <img src="car1.PNG" alt="Woodford Car Hire">
+      </div>
+      <div class="brand-content">
+        <h3>Woodford Car Hire</h3>
+        <p>We offer a modern car hire experience focused on convenience and reliability. Our extensive fleet is designed to meet both personal and business travel needs with vehicles ranging from compact cars to luxury sedans.</p>
+        <div class="brand-features">
+          <span class="feature-tag">24/7 Support</span>
+          <span class="feature-tag">Flexible Rentals</span>
+          <span class="feature-tag">Nationwide Coverage</span>
         </div>
-    </section>
+        <a class="learn-more" href="https://www.woodford.co.za/">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Partner With Woodford Group</h2>
-                <p>Whether you need transportation, auction services, or logistics solutions, our brands work together to provide integrated services tailored to your needs.</p>
-                <a href="https://www.woodford.co.za/contact" class="btn cta-btn">Contact Our Team</a>
-            </div>
+
+    <div class="brand">
+      <div class="brand-image-container">
+        <img src="https://www.changecars.co.za/images/200/dealers/241217/3188.jpg" alt="Woodford Car Trade">
+      </div>
+      <div class="brand-content">
+        <h3>Woodford Car Trade</h3>
+        <p>Buy and sell with confidence through our trusted car trading platform. We ensure quality assurance, fair pricing, and full transparency throughout the process with our certified pre-owned vehicles.</p>
+        <div class="brand-features">
+          <span class="feature-tag">Certified Pre-Owned</span>
+          <span class="feature-tag">Price Match</span>
+          <span class="feature-tag">Free Valuation</span>
         </div>
-    </section>
+        <a class="learn-more" href="https://woodfordcartrade.co.za/">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="logo.PNG" alt="Woodford Group Logo" style="margin-bottom: 20px;">
-                    <p>Woodford Group is a diversified South African company with operations in vehicle rentals, auctions, and logistics services.</p>
-                    <div class="social-links">
-
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h3>Our Brands</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://www.woodford.co.za/">Woodford Car Hire</a></li>
-                        <li><a href="https://www.woodfordcartrade.co.za/">Woodford Bid</a></li>
-                        <li><a href="https://logistics.woodford.co.za/">Woodford Vehicles Rentals</a></li>
-
-                    </ul>
-                </div>
-                <div class="footer-col">
-                     
-                </div>
-                 
-            </div>
+    <div class="brand">
+      <div class="brand-image-container">
+        <img src="logistic.jpg" alt="Woodford Vehicle Rentals">
+      </div>
+      <div class="brand-content">
+        <h3>Woodford Vehicle Rentals</h3>
+        <p>From sedans to commercial trucks, our rental solutions are flexible and affordable, built to support logistics companies and fleet managers nationwide with customized rental packages.</p>
+        <div class="brand-features">
+          <span class="feature-tag">Commercial Fleet</span>
+          <span class="feature-tag">Long-term Options</span>
+          <span class="feature-tag">Maintenance Included</span>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2025 Woodford Group. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
+        <a class="learn-more" href="https://logistics.woodford.co.za/">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
 
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate brand cards on scroll
-            const brandCards = document.querySelectorAll('.brand-card');
-            
-            const animateOnScroll = () => {
-                brandCards.forEach((card, index) => {
-                    const cardPosition = card.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-                    
-                    if(cardPosition < screenPosition) {
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, index * 200);
-                    }
-                });
-            };
-            
-            // Set initial state
-            brandCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1)';
-            });
-            
-            // Run on load and scroll
-            animateOnScroll();
-            window.addEventListener('scroll', animateOnScroll);
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
+    <div class="brand">
+      <div class="brand-image-container">
+        <img src="https://www.enterprise.com/content/dam/ecom/logo-enterprise.png" alt="Enterprise">
+      </div>
+      <div class="brand-content">
+        <h3>Enterprise</h3>
+        <p>Enterprise delivers industry-leading service, innovative rental solutions, and exceptional customer care for both short- and long-term needs with over 7,500 locations worldwide.</p>
+        <div class="brand-features">
+          <span class="feature-tag">Global Network</span>
+          <span class="feature-tag">Business Solutions</span>
+          <span class="feature-tag">Award-Winning</span>
+        </div>
+        <a class="learn-more" href="https://www.enterprise.com/en/home.html">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="brand">
+      <div class="brand-image-container">
+        <img src="https://d2bqt2gyedtfmm.cloudfront.net/find/assets/logos/Alamo.webp" alt="Alamo">
+      </div>
+      <div class="brand-content">
+        <h3>Alamo</h3>
+        <p>Alamo provides value-driven rental options with a strong focus on leisure travelers and seamless airport pick-up and drop-off experiences at major destinations worldwide.</p>
+        <div class="brand-features">
+          <span class="feature-tag">Leisure Focus</span>
+          <span class="feature-tag">Airport Locations</span>
+          <span class="feature-tag">Family Deals</span>
+        </div>
+        <a class="learn-more" href="https://www.alamo.com/en/home.html">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="brand">
+      <div class="brand-image-container">
+        <img src="https://d2bqt2gyedtfmm.cloudfront.net/find/assets/logos/NA.webp" alt="National">
+      </div>
+      <div class="brand-content">
+        <h3>National</h3>
+        <p>National Car Rental is the go-to choice for business professionals who demand speed, control, and choice in their rental experience with our Emerald Club loyalty program.</p>
+        <div class="brand-features">
+          <span class="feature-tag">Business Focus</span>
+          <span class="feature-tag">Emerald Club</span>
+          <span class="feature-tag">Executive Selection</span>
+        </div>
+        <a class="learn-more" href="https://www.nationalcar.com/en/home.html">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <i class="fas fa-car"></i> The Woodford Group
+        </div>
+        <p>The Woodford Group is a global leader in transportation solutions, offering a comprehensive range of services to meet all your mobility needs.</p>
+ 
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Ec3-42g-SApGkFZpVcv3RHYBFO3SOjTDgMhICK9E8k0S4Q?e=aY7KPJ">Home</a></li>
+          <li><a href="https://woodfordcarhire.sharepoint.com/:u:/s/WoodfordHub/Eb5O9Bt1uZNNjrdoNxxjpFkBHCijJob0WOq_--Hg36KaqQ?e=cUTBpY">About</a></li>
+ 
+        </ul>
+      </div>
+      <div class="footer-links">
+         
+      </div>
+      
+    </div>
+    <div class="copyright">
+      &copy; 2025 The Woodford Group. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="Index.html" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+
+    // Smooth scrolling for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.brand');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.style.animationPlayState = 'running';
+        }
+      });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+
 </body>
 </html>
